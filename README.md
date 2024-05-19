@@ -1,6 +1,6 @@
 # EverydayMarketApp
 
-Welcome to my
+Welcome to my Project.
 
 ## Development server
 
