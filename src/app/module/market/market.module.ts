@@ -6,6 +6,8 @@ import { ProductsPageComponent } from './products-page/products-page.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -14,14 +16,17 @@ import { ProductComponent } from './product/product.component';
     CategoryMenuComponent,
     ProductsPageComponent,
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    
   
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
   ],
   exports: [
-    ProductsPageComponent
+    ProductsPageComponent,
+    
   ]
 })
 export class MarketModule { }

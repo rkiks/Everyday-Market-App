@@ -1,0 +1,64 @@
+<div class="form-container">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name" class="fs-3 fw-semibold">Name:</label>
+      <input id="name" formControlName="name" class="form-control form-control-lg"/>
+      <div *ngIf="registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
+        Name should only contain letters and spaces.
+      </div>
+    </div>
+  
+    <div>
+      <label for="email" class="fs-3 fw-semibold">Email:</label>
+      <input id="email" formControlName="email" class="form-control form-control-lg"/>
+      <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+        Please enter a valid email address.
+      </div>
+    </div>
+  
+    <div>
+      <label for="phone" class="fs-3 fw-semibold">Phone Number:</label>
+      <input id="phone" formControlName="phone" class="form-control form-control-lg"/>
+      <div *ngIf="registerForm.get('phone')?.invalid && (registerForm.get('phone')?.dirty || registerForm.get('phone')?.touched)">
+        Phone number must be 10 digits.
+      </div>
+    </div>
+  
+    <div>
+      <label for="dob" class="fs-3 fw-semibold">Date of Birth:</label>
+      <input type="date" id="dob" formControlName="dob" class="form-control form-control-lg"/>
+    </div>
+  
+    <div>
+      <label for="street" class="fs-3 fw-semibold">Street Address:</label>
+      <input id="street" formControlName="street" class="form-control form-control-lg"/>
+      <div *ngIf="registerForm.get('street')?.invalid && (registerForm.get('street')?.dirty || registerForm.get('street')?.touched)">
+        Street Address should be alphanumeric.
+      </div>
+    </div>
+  
+    <div>
+      <label for="province" class="fs-3 fw-semibold">Province:</label>
+      <select id="province" formControlName="province" class="form-select form-select-lg mb-3">
+        <option *ngFor="let province of provinces" [value]="province">{{ province }}</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="country" class="fs-3 fw-semibold">Country:</label>
+      <select id="country" formControlName="country" class="form-select form-select-lg mb-3">
+        <option value="US">US</option>
+        <option value="Canada">Canada</option>
+      </select>
+    </div>
+  
+    <div>
+      <label class="fs-3 fw-semibold">
+        <input type="checkbox" formControlName="terms" />
+        I accept the Terms & Conditions
+      </label>
+    </div>
+  
+    <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
+  </form>
+  </div>

@@ -1,7 +1,7 @@
 <ul>
-  <li *ngFor="let c of categories">
+  <li *ngFor="let c of categories" class="navbar-text">
     <app-category-menu-item [categoryName]="c.name" [checked]="c.name === selectedCategoryName" (selected)="onCategorySelected($event)">
     </app-category-menu-item>
   </li>
     
-  </ul>
+</ul>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Category } from '../../../model/category';
 import { IProduct } from '../../../model/product';
 import { CategoriesService } from '../../core/services/categories.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-page',
@@ -20,7 +21,8 @@ export class ProductsPageComponent implements OnInit {
 
   products: IProduct[] | undefined;
  
-  constructor(private readonly categoriesService: CategoriesService) { }
+  constructor(private readonly categoriesService: CategoriesService, private router: Router) { }
+  
  
   ngOnInit() {
   }
@@ -30,4 +32,9 @@ export class ProductsPageComponent implements OnInit {
     alert(category.name);
   }
 
+  goToRegister(): void {
+    this.router.navigate(['/register']);
+  }
+
+  
 }
