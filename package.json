@@ -1,7 +1,7 @@
 {
   "name": "everyday-market-app",
   "version": "0.0.0",
-  "homepage": "https://github.com/rkiks/everyday-market-app.git",
+  "homepage": "https://rkiks.github.io/everyday-market-app/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "analyze": "webpack-bundle-analyzer dist/stats.json"
   },
   "private": true,
